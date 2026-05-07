@@ -1,0 +1,5 @@
+2026-05-07 12:02:25,955 | INFO     | train_all | ======================================================================
+2026-05-07 12:02:25,955 | INFO     | train_all |   TIME SERIES FORECASTING SYSTEM — TRAINING PIPELINE
+2026-05-07 12:02:25,956 | INFO     | train_all | ======================================================================
+2026-05-07 12:02:25,956 | INFO     | train_all | STEP 1 / 5: Loading and preprocessing data ...
+2026-05-07 12:02:25,956 | INFO     | src.preprocessing | Loading data from: C:\forecasting_system\data\Forecasting Case- Study.xlsx
