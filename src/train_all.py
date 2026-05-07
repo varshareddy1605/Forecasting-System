@@ -68,7 +68,7 @@ def run_pipeline(skip_lstm: bool = False, skip_sarima: bool = False, limit: int 
     logger.info("  TIME SERIES FORECASTING SYSTEM — TRAINING PIPELINE")
     logger.info("=" * 70)
 
-    # ── Step 1: Preprocessing ─────────────────────────────────────────────────
+    # Preprocessing
     logger.info("STEP 1 / 5: Loading and preprocessing data ...")
     state_data = load_and_preprocess()
     states = list(state_data.keys())
@@ -77,7 +77,7 @@ def run_pipeline(skip_lstm: bool = False, skip_sarima: bool = False, limit: int 
         logger.info(f"Limiting to {limit} states for testing.")
     logger.info(f"States to process: {states}")
 
-    # ── Step 2 – 4: Per-state model training ─────────────────────────────────
+    # Per-state model training
     all_state_results: dict = {}
 
     for state in states:
@@ -86,10 +86,10 @@ def run_pipeline(skip_lstm: bool = False, skip_sarima: bool = False, limit: int 
 
         raw_df = state_data[state]
 
-        # ── Feature engineering (for ML models) ──────────────────────────────
+        # Feature engineering
         feat_df = create_features(raw_df)
 
-        # ── Time-based split ──────────────────────────────────────────────────
+        # Time-based split
         train_feat, val_feat, test_feat = train_val_test_split(feat_df)
         train_raw,  val_raw,  test_raw  = (
             raw_df.loc[train_feat.index]["Total"],
@@ -107,7 +107,7 @@ def run_pipeline(skip_lstm: bool = False, skip_sarima: bool = False, limit: int 
 
         model_results = []
 
-        # ── SARIMA ────────────────────────────────────────────────────────────
+        # SARIMA
         if not skip_sarima:
             try:
                 result = train_sarima(
@@ -120,7 +120,7 @@ def run_pipeline(skip_lstm: bool = False, skip_sarima: bool = False, limit: int 
         else:
             logger.info("  [SARIMA] Skipped.")
 
-        # ── Prophet ───────────────────────────────────────────────────────────
+        # Prophet
         try:
             result = train_prophet(
                 train_raw, val_raw, test_raw, state, ARTIFACTS_MODELS
@@ -130,7 +130,7 @@ def run_pipeline(skip_lstm: bool = False, skip_sarima: bool = False, limit: int 
             logger.error(f"  [Prophet] Failed for {state}: {e}")
             logger.debug(traceback.format_exc())
 
-        # ── XGBoost ───────────────────────────────────────────────────────────
+        # XGBoost
         try:
             result = train_xgboost(
                 train_feat, val_feat, test_feat, state, ARTIFACTS_MODELS
@@ -140,7 +140,7 @@ def run_pipeline(skip_lstm: bool = False, skip_sarima: bool = False, limit: int 
             logger.error(f"  [XGBoost] Failed for {state}: {e}")
             logger.debug(traceback.format_exc())
 
-        # ── LSTM ──────────────────────────────────────────────────────────────
+        # LSTM
         if not skip_lstm:
             try:
                 result = train_lstm(
@@ -159,19 +159,19 @@ def run_pipeline(skip_lstm: bool = False, skip_sarima: bool = False, limit: int 
 
         all_state_results[state] = model_results
 
-    # ── Step 5: Model selection ───────────────────────────────────────────────
+    # Model selection
     logger.info("=" * 60)
     logger.info("STEP 5 / 5: Selecting best models ...")
     final_results = select_best_models_all_states(all_state_results)
 
-    # ── Save forecasts per state ──────────────────────────────────────────────
+    # Save forecasts per state
     for state, result in final_results.items():
         forecast_path = ARTIFACTS_FORECASTS / f"{state}.json"
         with open(forecast_path, "w") as f:
             json.dump(result, f, indent=2)
         logger.info(f"  Forecast saved: {forecast_path}")
 
-    # ── Save consolidated results ─────────────────────────────────────────────
+    # Save consolidated results
     results_path = ARTIFACTS_RESULTS / "evaluation_results.json"
     with open(results_path, "w") as f:
         json.dump(final_results, f, indent=2)

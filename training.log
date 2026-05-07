@@ -3,3 +3,836 @@
 2026-05-07 12:02:25,956 | INFO     | train_all | ======================================================================
 2026-05-07 12:02:25,956 | INFO     | train_all | STEP 1 / 5: Loading and preprocessing data ...
 2026-05-07 12:02:25,956 | INFO     | src.preprocessing | Loading data from: C:\forecasting_system\data\Forecasting Case- Study.xlsx
+2026-05-07 12:02:27,644 | INFO     | src.preprocessing | Raw data shape: (8084, 4)
+2026-05-07 12:02:27,644 | INFO     | src.preprocessing | Columns: ['State', 'Date', 'Total', 'Category']
+2026-05-07 12:02:28,053 | INFO     | src.preprocessing | Preprocessing complete. States found: 43
+2026-05-07 12:02:28,053 | INFO     | train_all | States to process: ['Alabama', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Florida', 'Georgia', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Nebraska', 'Nevada', 'New Hampshire', 'New Mexico', 'New York', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
+2026-05-07 12:02:28,053 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:02:28,053 | INFO     | train_all | Processing state: Alabama
+2026-05-07 12:02:28,079 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:02:32,663 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Alabama
+2026-05-07 12:02:32,679 | ERROR    | train_all |   [SARIMA] Failed for Alabama: max_p must be >= start_p
+2026-05-07 12:02:32,950 | INFO     | src.models.prophet_model | [Prophet] Training for state: Alabama
+2026-05-07 12:02:33,052 | ERROR    | train_all |   [Prophet] Failed for Alabama: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:02:33,345 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Alabama
+2026-05-07 12:02:34,063 | INFO     | src.models.xgboost_model | [XGBoost] Alabama metrics: {'rmse': 108160307.1934, 'mae': 79353008.1865, 'mape': 53.21}
+2026-05-07 12:02:34,437 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Alabama_xgboost.pkl
+2026-05-07 12:02:53,549 | WARNING  | tensorflow | From C:\Users\varsh\AppData\Roaming\Python\Python311\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-05-07 12:02:54,239 | INFO     | src.models.lstm_model | [LSTM] Training for state: Alabama
+2026-05-07 12:02:54,446 | WARNING  | tensorflow | From C:\Users\varsh\AppData\Roaming\Python\Python311\site-packages\keras\src\layers\rnn\lstm.py:148: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+2026-05-07 12:02:57,118 | WARNING  | tensorflow | From C:\Users\varsh\AppData\Roaming\Python\Python311\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+2026-05-07 12:03:04,980 | INFO     | src.models.lstm_model | [LSTM] Alabama — training complete.
+2026-05-07 12:03:08,521 | INFO     | src.models.lstm_model | [LSTM] Alabama metrics: {'rmse': 87982519.7525, 'mae': 80852222.1429, 'mape': 70.9003}
+2026-05-07 12:03:26,012 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Alabama_lstm.pkl
+2026-05-07 12:03:26,012 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:03:26,012 | INFO     | train_all | Processing state: Arizona
+2026-05-07 12:03:26,028 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:03:26,028 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Arizona
+2026-05-07 12:03:26,030 | ERROR    | train_all |   [SARIMA] Failed for Arizona: max_p must be >= start_p
+2026-05-07 12:03:26,030 | INFO     | src.models.prophet_model | [Prophet] Training for state: Arizona
+2026-05-07 12:03:26,033 | ERROR    | train_all |   [Prophet] Failed for Arizona: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:03:26,036 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Arizona
+2026-05-07 12:03:26,583 | INFO     | src.models.xgboost_model | [XGBoost] Arizona metrics: {'rmse': 101324153.1569, 'mae': 63476964.2435, 'mape': 95.4205}
+2026-05-07 12:03:26,970 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Arizona_xgboost.pkl
+2026-05-07 12:03:26,971 | INFO     | src.models.lstm_model | [LSTM] Training for state: Arizona
+2026-05-07 12:03:31,752 | INFO     | src.models.lstm_model | [LSTM] Arizona — training complete.
+2026-05-07 12:03:33,419 | INFO     | src.models.lstm_model | [LSTM] Arizona metrics: {'rmse': 99058937.9997, 'mae': 94362176.7615, 'mape': 66.2604}
+2026-05-07 12:03:41,084 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Arizona_lstm.pkl
+2026-05-07 12:03:41,084 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:03:41,084 | INFO     | train_all | Processing state: Arkansas
+2026-05-07 12:03:41,090 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:03:41,090 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Arkansas
+2026-05-07 12:03:41,090 | ERROR    | train_all |   [SARIMA] Failed for Arkansas: max_p must be >= start_p
+2026-05-07 12:03:41,090 | INFO     | src.models.prophet_model | [Prophet] Training for state: Arkansas
+2026-05-07 12:03:41,092 | ERROR    | train_all |   [Prophet] Failed for Arkansas: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:03:41,093 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Arkansas
+2026-05-07 12:03:41,370 | INFO     | src.models.xgboost_model | [XGBoost] Arkansas metrics: {'rmse': 56593114.7838, 'mae': 41308589.294, 'mape': 57.5129}
+2026-05-07 12:03:41,487 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Arkansas_xgboost.pkl
+2026-05-07 12:03:41,489 | INFO     | src.models.lstm_model | [LSTM] Training for state: Arkansas
+2026-05-07 12:03:44,733 | INFO     | src.models.lstm_model | [LSTM] Arkansas — training complete.
+2026-05-07 12:03:46,129 | INFO     | src.models.lstm_model | [LSTM] Arkansas metrics: {'rmse': 48069165.1104, 'mae': 45078591.3899, 'mape': 68.5526}
+2026-05-07 12:03:58,801 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Arkansas_lstm.pkl
+2026-05-07 12:03:58,802 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:03:58,802 | INFO     | train_all | Processing state: California
+2026-05-07 12:03:58,809 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:03:58,809 | INFO     | src.models.sarima_model | [SARIMA] Training for state: California
+2026-05-07 12:03:58,809 | ERROR    | train_all |   [SARIMA] Failed for California: max_p must be >= start_p
+2026-05-07 12:03:58,809 | INFO     | src.models.prophet_model | [Prophet] Training for state: California
+2026-05-07 12:03:58,811 | ERROR    | train_all |   [Prophet] Failed for California: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:03:58,811 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: California
+2026-05-07 12:03:59,027 | INFO     | src.models.xgboost_model | [XGBoost] California metrics: {'rmse': 378879756.1212, 'mae': 235601926.5083, 'mape': 92.7282}
+2026-05-07 12:03:59,154 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\California_xgboost.pkl
+2026-05-07 12:03:59,155 | INFO     | src.models.lstm_model | [LSTM] Training for state: California
+2026-05-07 12:04:02,448 | INFO     | src.models.lstm_model | [LSTM] California — training complete.
+2026-05-07 12:04:03,771 | INFO     | src.models.lstm_model | [LSTM] California metrics: {'rmse': 367986890.4875, 'mae': 338812862.4184, 'mape': 70.486}
+2026-05-07 12:04:12,017 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\California_lstm.pkl
+2026-05-07 12:04:12,018 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:04:12,018 | INFO     | train_all | Processing state: Colorado
+2026-05-07 12:04:12,023 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:04:12,023 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Colorado
+2026-05-07 12:04:12,025 | ERROR    | train_all |   [SARIMA] Failed for Colorado: max_p must be >= start_p
+2026-05-07 12:04:12,025 | INFO     | src.models.prophet_model | [Prophet] Training for state: Colorado
+2026-05-07 12:04:12,025 | ERROR    | train_all |   [Prophet] Failed for Colorado: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:04:12,028 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Colorado
+2026-05-07 12:04:12,362 | INFO     | src.models.xgboost_model | [XGBoost] Colorado metrics: {'rmse': 75626910.9171, 'mae': 48782041.9156, 'mape': 87.8791}
+2026-05-07 12:04:12,605 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Colorado_xgboost.pkl
+2026-05-07 12:04:12,605 | INFO     | src.models.lstm_model | [LSTM] Training for state: Colorado
+2026-05-07 12:04:17,067 | INFO     | src.models.lstm_model | [LSTM] Colorado — training complete.
+2026-05-07 12:04:18,697 | INFO     | src.models.lstm_model | [LSTM] Colorado metrics: {'rmse': 77853641.865, 'mae': 74406439.2606, 'mape': 65.6732}
+2026-05-07 12:04:31,392 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Colorado_lstm.pkl
+2026-05-07 12:04:31,392 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:04:31,392 | INFO     | train_all | Processing state: Connecticut
+2026-05-07 12:04:31,409 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:04:31,409 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Connecticut
+2026-05-07 12:04:31,410 | ERROR    | train_all |   [SARIMA] Failed for Connecticut: max_p must be >= start_p
+2026-05-07 12:04:31,412 | INFO     | src.models.prophet_model | [Prophet] Training for state: Connecticut
+2026-05-07 12:04:31,416 | ERROR    | train_all |   [Prophet] Failed for Connecticut: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:04:31,417 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Connecticut
+2026-05-07 12:04:31,988 | INFO     | src.models.xgboost_model | [XGBoost] Connecticut metrics: {'rmse': 48688427.1633, 'mae': 36146434.8896, 'mape': 62.2655}
+2026-05-07 12:04:32,366 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Connecticut_xgboost.pkl
+2026-05-07 12:04:32,366 | INFO     | src.models.lstm_model | [LSTM] Training for state: Connecticut
+2026-05-07 12:04:38,218 | INFO     | src.models.lstm_model | [LSTM] Connecticut — training complete.
+2026-05-07 12:04:39,766 | INFO     | src.models.lstm_model | [LSTM] Connecticut metrics: {'rmse': 38403798.7382, 'mae': 34871425.9146, 'mape': 72.235}
+2026-05-07 12:04:51,494 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Connecticut_lstm.pkl
+2026-05-07 12:04:51,494 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:04:51,494 | INFO     | train_all | Processing state: Florida
+2026-05-07 12:04:51,499 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:04:51,499 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Florida
+2026-05-07 12:04:51,499 | ERROR    | train_all |   [SARIMA] Failed for Florida: max_p must be >= start_p
+2026-05-07 12:04:51,502 | INFO     | src.models.prophet_model | [Prophet] Training for state: Florida
+2026-05-07 12:04:51,503 | ERROR    | train_all |   [Prophet] Failed for Florida: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:04:51,503 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Florida
+2026-05-07 12:04:51,727 | INFO     | src.models.xgboost_model | [XGBoost] Florida metrics: {'rmse': 350288356.8331, 'mae': 224814837.95, 'mape': 97.0318}
+2026-05-07 12:04:51,872 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Florida_xgboost.pkl
+2026-05-07 12:04:51,873 | INFO     | src.models.lstm_model | [LSTM] Training for state: Florida
+2026-05-07 12:04:57,145 | INFO     | src.models.lstm_model | [LSTM] Florida — training complete.
+2026-05-07 12:04:59,102 | INFO     | src.models.lstm_model | [LSTM] Florida metrics: {'rmse': 322445114.6505, 'mae': 296322647.7844, 'mape': 70.5885}
+2026-05-07 12:05:09,307 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Florida_lstm.pkl
+2026-05-07 12:05:09,307 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:05:09,307 | INFO     | train_all | Processing state: Georgia
+2026-05-07 12:05:09,314 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:05:09,314 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Georgia
+2026-05-07 12:05:09,315 | ERROR    | train_all |   [SARIMA] Failed for Georgia: max_p must be >= start_p
+2026-05-07 12:05:09,316 | INFO     | src.models.prophet_model | [Prophet] Training for state: Georgia
+2026-05-07 12:05:09,316 | ERROR    | train_all |   [Prophet] Failed for Georgia: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:05:09,316 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Georgia
+2026-05-07 12:05:09,628 | INFO     | src.models.xgboost_model | [XGBoost] Georgia metrics: {'rmse': 206140540.8782, 'mae': 154608901.175, 'mape': 64.8904}
+2026-05-07 12:05:09,825 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Georgia_xgboost.pkl
+2026-05-07 12:05:09,825 | INFO     | src.models.lstm_model | [LSTM] Training for state: Georgia
+2026-05-07 12:05:14,569 | INFO     | src.models.lstm_model | [LSTM] Georgia — training complete.
+2026-05-07 12:05:16,261 | INFO     | src.models.lstm_model | [LSTM] Georgia metrics: {'rmse': 162425993.8408, 'mae': 149253139.6548, 'mape': 70.8741}
+2026-05-07 12:05:26,149 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Georgia_lstm.pkl
+2026-05-07 12:05:26,149 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:05:26,149 | INFO     | train_all | Processing state: Illinois
+2026-05-07 12:05:26,155 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:05:26,155 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Illinois
+2026-05-07 12:05:26,155 | ERROR    | train_all |   [SARIMA] Failed for Illinois: max_p must be >= start_p
+2026-05-07 12:05:26,155 | INFO     | src.models.prophet_model | [Prophet] Training for state: Illinois
+2026-05-07 12:05:26,157 | ERROR    | train_all |   [Prophet] Failed for Illinois: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:05:26,158 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Illinois
+2026-05-07 12:05:26,473 | INFO     | src.models.xgboost_model | [XGBoost] Illinois metrics: {'rmse': 160258021.1903, 'mae': 114392167.8854, 'mape': 63.1961}
+2026-05-07 12:05:26,668 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Illinois_xgboost.pkl
+2026-05-07 12:05:26,668 | INFO     | src.models.lstm_model | [LSTM] Training for state: Illinois
+2026-05-07 12:05:32,143 | INFO     | src.models.lstm_model | [LSTM] Illinois — training complete.
+2026-05-07 12:05:37,083 | INFO     | src.models.lstm_model | [LSTM] Illinois metrics: {'rmse': 134779688.7198, 'mae': 121146121.972, 'mape': 72.9516}
+2026-05-07 12:05:54,569 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Illinois_lstm.pkl
+2026-05-07 12:05:54,569 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:05:54,569 | INFO     | train_all | Processing state: Indiana
+2026-05-07 12:05:54,595 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:05:54,595 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Indiana
+2026-05-07 12:05:54,597 | ERROR    | train_all |   [SARIMA] Failed for Indiana: max_p must be >= start_p
+2026-05-07 12:05:54,599 | INFO     | src.models.prophet_model | [Prophet] Training for state: Indiana
+2026-05-07 12:05:54,603 | ERROR    | train_all |   [Prophet] Failed for Indiana: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:05:54,605 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Indiana
+2026-05-07 12:05:55,239 | INFO     | src.models.xgboost_model | [XGBoost] Indiana metrics: {'rmse': 117332182.0964, 'mae': 83671568.326, 'mape': 68.9576}
+2026-05-07 12:05:55,664 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Indiana_xgboost.pkl
+2026-05-07 12:05:55,665 | INFO     | src.models.lstm_model | [LSTM] Training for state: Indiana
+2026-05-07 12:06:04,400 | INFO     | src.models.lstm_model | [LSTM] Indiana — training complete.
+2026-05-07 12:06:07,671 | INFO     | src.models.lstm_model | [LSTM] Indiana metrics: {'rmse': 97146051.0638, 'mae': 92140320.1085, 'mape': 66.842}
+2026-05-07 12:06:23,510 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Indiana_lstm.pkl
+2026-05-07 12:06:23,510 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:06:23,510 | INFO     | train_all | Processing state: Iowa
+2026-05-07 12:06:23,524 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:06:23,524 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Iowa
+2026-05-07 12:06:23,526 | ERROR    | train_all |   [SARIMA] Failed for Iowa: max_p must be >= start_p
+2026-05-07 12:06:23,527 | INFO     | src.models.prophet_model | [Prophet] Training for state: Iowa
+2026-05-07 12:06:23,530 | ERROR    | train_all |   [Prophet] Failed for Iowa: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:06:23,531 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Iowa
+2026-05-07 12:06:24,105 | INFO     | src.models.xgboost_model | [XGBoost] Iowa metrics: {'rmse': 56557931.3352, 'mae': 41516944.1615, 'mape': 68.0354}
+2026-05-07 12:06:24,459 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Iowa_xgboost.pkl
+2026-05-07 12:06:24,460 | INFO     | src.models.lstm_model | [LSTM] Training for state: Iowa
+2026-05-07 12:06:33,889 | INFO     | src.models.lstm_model | [LSTM] Iowa — training complete.
+2026-05-07 12:06:37,253 | INFO     | src.models.lstm_model | [LSTM] Iowa metrics: {'rmse': 50642501.8588, 'mae': 47793015.3805, 'mape': 67.9198}
+2026-05-07 12:06:53,039 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Iowa_lstm.pkl
+2026-05-07 12:06:53,039 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:06:53,039 | INFO     | train_all | Processing state: Kansas
+2026-05-07 12:06:53,057 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:06:53,057 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Kansas
+2026-05-07 12:06:53,059 | ERROR    | train_all |   [SARIMA] Failed for Kansas: max_p must be >= start_p
+2026-05-07 12:06:53,060 | INFO     | src.models.prophet_model | [Prophet] Training for state: Kansas
+2026-05-07 12:06:53,063 | ERROR    | train_all |   [Prophet] Failed for Kansas: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:06:53,064 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Kansas
+2026-05-07 12:06:53,694 | INFO     | src.models.xgboost_model | [XGBoost] Kansas metrics: {'rmse': 47589120.6924, 'mae': 35010909.6208, 'mape': 71.311}
+2026-05-07 12:06:54,144 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Kansas_xgboost.pkl
+2026-05-07 12:06:54,145 | INFO     | src.models.lstm_model | [LSTM] Training for state: Kansas
+2026-05-07 12:07:04,590 | INFO     | src.models.lstm_model | [LSTM] Kansas — training complete.
+2026-05-07 12:07:07,849 | INFO     | src.models.lstm_model | [LSTM] Kansas metrics: {'rmse': 38681768.3582, 'mae': 35653430.8287, 'mape': 70.8283}
+2026-05-07 12:07:25,467 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Kansas_lstm.pkl
+2026-05-07 12:07:25,467 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:07:25,467 | INFO     | train_all | Processing state: Kentucky
+2026-05-07 12:07:25,487 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:07:25,487 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Kentucky
+2026-05-07 12:07:25,488 | ERROR    | train_all |   [SARIMA] Failed for Kentucky: max_p must be >= start_p
+2026-05-07 12:07:25,489 | INFO     | src.models.prophet_model | [Prophet] Training for state: Kentucky
+2026-05-07 12:07:25,493 | ERROR    | train_all |   [Prophet] Failed for Kentucky: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:07:25,494 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Kentucky
+2026-05-07 12:07:26,070 | INFO     | src.models.xgboost_model | [XGBoost] Kentucky metrics: {'rmse': 78585040.4693, 'mae': 57768439.0008, 'mape': 80.4765}
+2026-05-07 12:07:26,520 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Kentucky_xgboost.pkl
+2026-05-07 12:07:26,520 | INFO     | src.models.lstm_model | [LSTM] Training for state: Kentucky
+2026-05-07 12:07:35,448 | INFO     | src.models.lstm_model | [LSTM] Kentucky — training complete.
+2026-05-07 12:07:38,586 | INFO     | src.models.lstm_model | [LSTM] Kentucky metrics: {'rmse': 74680471.9491, 'mae': 69946584.8872, 'mape': 68.7468}
+2026-05-07 12:07:55,519 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Kentucky_lstm.pkl
+2026-05-07 12:07:55,520 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:07:55,520 | INFO     | train_all | Processing state: Louisiana
+2026-05-07 12:07:55,535 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:07:55,535 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Louisiana
+2026-05-07 12:07:55,537 | ERROR    | train_all |   [SARIMA] Failed for Louisiana: max_p must be >= start_p
+2026-05-07 12:07:55,537 | INFO     | src.models.prophet_model | [Prophet] Training for state: Louisiana
+2026-05-07 12:07:55,542 | ERROR    | train_all |   [Prophet] Failed for Louisiana: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:07:55,543 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Louisiana
+2026-05-07 12:07:56,102 | INFO     | src.models.xgboost_model | [XGBoost] Louisiana metrics: {'rmse': 105785829.1554, 'mae': 75772946.6083, 'mape': 80.2361}
+2026-05-07 12:07:56,307 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Louisiana_xgboost.pkl
+2026-05-07 12:07:56,309 | INFO     | src.models.lstm_model | [LSTM] Training for state: Louisiana
+2026-05-07 12:07:59,705 | INFO     | src.models.lstm_model | [LSTM] Louisiana — training complete.
+2026-05-07 12:08:01,075 | INFO     | src.models.lstm_model | [LSTM] Louisiana metrics: {'rmse': 79371572.6609, 'mae': 74542456.3693, 'mape': 68.1091}
+2026-05-07 12:08:08,361 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Louisiana_lstm.pkl
+2026-05-07 12:08:08,361 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:08:08,361 | INFO     | train_all | Processing state: Maine
+2026-05-07 12:08:08,366 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:08:08,366 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Maine
+2026-05-07 12:08:08,366 | ERROR    | train_all |   [SARIMA] Failed for Maine: max_p must be >= start_p
+2026-05-07 12:08:08,366 | INFO     | src.models.prophet_model | [Prophet] Training for state: Maine
+2026-05-07 12:08:08,369 | ERROR    | train_all |   [Prophet] Failed for Maine: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:08:08,369 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Maine
+2026-05-07 12:08:08,608 | INFO     | src.models.xgboost_model | [XGBoost] Maine metrics: {'rmse': 19920987.4858, 'mae': 13984692.9613, 'mape': 68.0734}
+2026-05-07 12:08:08,718 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Maine_xgboost.pkl
+2026-05-07 12:08:08,718 | INFO     | src.models.lstm_model | [LSTM] Training for state: Maine
+2026-05-07 12:08:12,157 | INFO     | src.models.lstm_model | [LSTM] Maine — training complete.
+2026-05-07 12:08:14,991 | INFO     | src.models.lstm_model | [LSTM] Maine metrics: {'rmse': 20161036.1523, 'mae': 18810575.9559, 'mape': 69.1493}
+2026-05-07 12:08:33,965 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Maine_lstm.pkl
+2026-05-07 12:08:33,965 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:08:33,965 | INFO     | train_all | Processing state: Maryland
+2026-05-07 12:08:33,984 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:08:33,985 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Maryland
+2026-05-07 12:08:33,986 | ERROR    | train_all |   [SARIMA] Failed for Maryland: max_p must be >= start_p
+2026-05-07 12:08:33,988 | INFO     | src.models.prophet_model | [Prophet] Training for state: Maryland
+2026-05-07 12:08:33,992 | ERROR    | train_all |   [Prophet] Failed for Maryland: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:08:33,993 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Maryland
+2026-05-07 12:08:34,599 | INFO     | src.models.xgboost_model | [XGBoost] Maryland metrics: {'rmse': 91229166.9477, 'mae': 64261798.1224, 'mape': 69.1807}
+2026-05-07 12:08:35,023 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Maryland_xgboost.pkl
+2026-05-07 12:08:35,024 | INFO     | src.models.lstm_model | [LSTM] Training for state: Maryland
+2026-05-07 12:08:43,699 | INFO     | src.models.lstm_model | [LSTM] Maryland — training complete.
+2026-05-07 12:08:45,143 | INFO     | src.models.lstm_model | [LSTM] Maryland metrics: {'rmse': 70616686.7879, 'mae': 67000044.0459, 'mape': 66.6285}
+2026-05-07 12:08:54,603 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Maryland_lstm.pkl
+2026-05-07 12:08:54,603 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:08:54,605 | INFO     | train_all | Processing state: Massachusetts
+2026-05-07 12:08:54,612 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:08:54,612 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Massachusetts
+2026-05-07 12:08:54,612 | ERROR    | train_all |   [SARIMA] Failed for Massachusetts: max_p must be >= start_p
+2026-05-07 12:08:54,613 | INFO     | src.models.prophet_model | [Prophet] Training for state: Massachusetts
+2026-05-07 12:08:54,614 | ERROR    | train_all |   [Prophet] Failed for Massachusetts: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:08:54,614 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Massachusetts
+2026-05-07 12:08:54,918 | INFO     | src.models.xgboost_model | [XGBoost] Massachusetts metrics: {'rmse': 78903566.05, 'mae': 60570041.7625, 'mape': 74.2141}
+2026-05-07 12:08:55,136 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Massachusetts_xgboost.pkl
+2026-05-07 12:08:55,136 | INFO     | src.models.lstm_model | [LSTM] Training for state: Massachusetts
+2026-05-07 12:09:03,786 | INFO     | src.models.lstm_model | [LSTM] Massachusetts — training complete.
+2026-05-07 12:09:07,330 | INFO     | src.models.lstm_model | [LSTM] Massachusetts metrics: {'rmse': 78640738.5589, 'mae': 70748374.2879, 'mape': 73.0748}
+2026-05-07 12:09:23,402 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Massachusetts_lstm.pkl
+2026-05-07 12:09:23,402 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:09:23,402 | INFO     | train_all | Processing state: Michigan
+2026-05-07 12:09:23,420 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:09:23,420 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Michigan
+2026-05-07 12:09:23,421 | ERROR    | train_all |   [SARIMA] Failed for Michigan: max_p must be >= start_p
+2026-05-07 12:09:23,423 | INFO     | src.models.prophet_model | [Prophet] Training for state: Michigan
+2026-05-07 12:09:23,427 | ERROR    | train_all |   [Prophet] Failed for Michigan: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:09:23,427 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Michigan
+2026-05-07 12:09:24,039 | INFO     | src.models.xgboost_model | [XGBoost] Michigan metrics: {'rmse': 129885432.1572, 'mae': 101182198.1708, 'mape': 81.6908}
+2026-05-07 12:09:24,498 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Michigan_xgboost.pkl
+2026-05-07 12:09:24,499 | INFO     | src.models.lstm_model | [LSTM] Training for state: Michigan
+2026-05-07 12:09:33,145 | INFO     | src.models.lstm_model | [LSTM] Michigan — training complete.
+2026-05-07 12:09:36,484 | INFO     | src.models.lstm_model | [LSTM] Michigan metrics: {'rmse': 126127085.0615, 'mae': 117932763.0692, 'mape': 68.8091}
+2026-05-07 12:09:53,544 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Michigan_lstm.pkl
+2026-05-07 12:09:53,546 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:09:53,546 | INFO     | train_all | Processing state: Minnesota
+2026-05-07 12:09:53,565 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:09:53,566 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Minnesota
+2026-05-07 12:09:53,567 | ERROR    | train_all |   [SARIMA] Failed for Minnesota: max_p must be >= start_p
+2026-05-07 12:09:53,569 | INFO     | src.models.prophet_model | [Prophet] Training for state: Minnesota
+2026-05-07 12:09:53,572 | ERROR    | train_all |   [Prophet] Failed for Minnesota: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:09:53,573 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Minnesota
+2026-05-07 12:09:54,205 | INFO     | src.models.xgboost_model | [XGBoost] Minnesota metrics: {'rmse': 68706258.81, 'mae': 51030545.2865, 'mape': 81.1418}
+2026-05-07 12:09:54,678 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Minnesota_xgboost.pkl
+2026-05-07 12:09:54,679 | INFO     | src.models.lstm_model | [LSTM] Training for state: Minnesota
+2026-05-07 12:10:05,064 | INFO     | src.models.lstm_model | [LSTM] Minnesota — training complete.
+2026-05-07 12:10:08,477 | INFO     | src.models.lstm_model | [LSTM] Minnesota metrics: {'rmse': 65503725.1539, 'mae': 57843450.7451, 'mape': 74.8869}
+2026-05-07 12:10:24,782 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Minnesota_lstm.pkl
+2026-05-07 12:10:24,782 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:10:24,782 | INFO     | train_all | Processing state: Mississippi
+2026-05-07 12:10:24,799 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:10:24,799 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Mississippi
+2026-05-07 12:10:24,800 | ERROR    | train_all |   [SARIMA] Failed for Mississippi: max_p must be >= start_p
+2026-05-07 12:10:24,802 | INFO     | src.models.prophet_model | [Prophet] Training for state: Mississippi
+2026-05-07 12:10:24,805 | ERROR    | train_all |   [Prophet] Failed for Mississippi: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:10:24,806 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Mississippi
+2026-05-07 12:10:25,494 | INFO     | src.models.xgboost_model | [XGBoost] Mississippi metrics: {'rmse': 51776101.1102, 'mae': 30708877.9122, 'mape': 89.4817}
+2026-05-07 12:10:25,864 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Mississippi_xgboost.pkl
+2026-05-07 12:10:25,865 | INFO     | src.models.lstm_model | [LSTM] Training for state: Mississippi
+2026-05-07 12:10:35,360 | INFO     | src.models.lstm_model | [LSTM] Mississippi — training complete.
+2026-05-07 12:10:40,177 | INFO     | src.models.lstm_model | [LSTM] Mississippi metrics: {'rmse': 55165615.3296, 'mae': 53146659.5179, 'mape': 64.5172}
+2026-05-07 12:10:56,840 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Mississippi_lstm.pkl
+2026-05-07 12:10:56,840 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:10:56,840 | INFO     | train_all | Processing state: Missouri
+2026-05-07 12:10:56,858 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:10:56,858 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Missouri
+2026-05-07 12:10:56,859 | ERROR    | train_all |   [SARIMA] Failed for Missouri: max_p must be >= start_p
+2026-05-07 12:10:56,861 | INFO     | src.models.prophet_model | [Prophet] Training for state: Missouri
+2026-05-07 12:10:56,865 | ERROR    | train_all |   [Prophet] Failed for Missouri: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:10:56,865 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Missouri
+2026-05-07 12:10:57,469 | INFO     | src.models.xgboost_model | [XGBoost] Missouri metrics: {'rmse': 99456520.0458, 'mae': 71798924.1943, 'mape': 66.938}
+2026-05-07 12:10:57,923 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Missouri_xgboost.pkl
+2026-05-07 12:10:57,923 | INFO     | src.models.lstm_model | [LSTM] Training for state: Missouri
+2026-05-07 12:11:08,017 | INFO     | src.models.lstm_model | [LSTM] Missouri — training complete.
+2026-05-07 12:11:11,403 | INFO     | src.models.lstm_model | [LSTM] Missouri metrics: {'rmse': 83638427.1137, 'mae': 77775825.0, 'mape': 69.7376}
+2026-05-07 12:11:27,768 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Missouri_lstm.pkl
+2026-05-07 12:11:27,770 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:11:27,770 | INFO     | train_all | Processing state: Nebraska
+2026-05-07 12:11:27,786 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:11:27,786 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Nebraska
+2026-05-07 12:11:27,788 | ERROR    | train_all |   [SARIMA] Failed for Nebraska: max_p must be >= start_p
+2026-05-07 12:11:27,790 | INFO     | src.models.prophet_model | [Prophet] Training for state: Nebraska
+2026-05-07 12:11:27,794 | ERROR    | train_all |   [Prophet] Failed for Nebraska: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:11:27,795 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Nebraska
+2026-05-07 12:11:28,403 | INFO     | src.models.xgboost_model | [XGBoost] Nebraska metrics: {'rmse': 27501458.7199, 'mae': 15374389.7245, 'mape': 96.0228}
+2026-05-07 12:11:28,781 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Nebraska_xgboost.pkl
+2026-05-07 12:11:28,782 | INFO     | src.models.lstm_model | [LSTM] Training for state: Nebraska
+2026-05-07 12:11:37,796 | INFO     | src.models.lstm_model | [LSTM] Nebraska — training complete.
+2026-05-07 12:11:41,063 | INFO     | src.models.lstm_model | [LSTM] Nebraska metrics: {'rmse': 26826510.3612, 'mae': 25046933.5402, 'mape': 69.3917}
+2026-05-07 12:11:57,925 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Nebraska_lstm.pkl
+2026-05-07 12:11:57,925 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:11:57,926 | INFO     | train_all | Processing state: Nevada
+2026-05-07 12:11:57,981 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:11:57,981 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Nevada
+2026-05-07 12:11:57,983 | ERROR    | train_all |   [SARIMA] Failed for Nevada: max_p must be >= start_p
+2026-05-07 12:11:57,987 | INFO     | src.models.prophet_model | [Prophet] Training for state: Nevada
+2026-05-07 12:11:57,993 | ERROR    | train_all |   [Prophet] Failed for Nevada: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:11:57,995 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Nevada
+2026-05-07 12:11:58,588 | INFO     | src.models.xgboost_model | [XGBoost] Nevada metrics: {'rmse': 45123859.9658, 'mae': 28953247.3896, 'mape': 92.1606}
+2026-05-07 12:11:59,019 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Nevada_xgboost.pkl
+2026-05-07 12:11:59,019 | INFO     | src.models.lstm_model | [LSTM] Training for state: Nevada
+2026-05-07 12:12:08,333 | INFO     | src.models.lstm_model | [LSTM] Nevada — training complete.
+2026-05-07 12:12:12,428 | INFO     | src.models.lstm_model | [LSTM] Nevada metrics: {'rmse': 44316769.3812, 'mae': 41436491.1593, 'mape': 68.9099}
+2026-05-07 12:12:30,268 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Nevada_lstm.pkl
+2026-05-07 12:12:30,269 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:12:30,269 | INFO     | train_all | Processing state: New Hampshire
+2026-05-07 12:12:30,289 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:12:30,291 | INFO     | src.models.sarima_model | [SARIMA] Training for state: New Hampshire
+2026-05-07 12:12:30,292 | ERROR    | train_all |   [SARIMA] Failed for New Hampshire: max_p must be >= start_p
+2026-05-07 12:12:30,293 | INFO     | src.models.prophet_model | [Prophet] Training for state: New Hampshire
+2026-05-07 12:12:30,299 | ERROR    | train_all |   [Prophet] Failed for New Hampshire: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:12:30,300 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: New Hampshire
+2026-05-07 12:12:30,842 | INFO     | src.models.xgboost_model | [XGBoost] New Hampshire metrics: {'rmse': 24607008.1926, 'mae': 17402161.1331, 'mape': 81.5482}
+2026-05-07 12:12:31,311 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\New Hampshire_xgboost.pkl
+2026-05-07 12:12:31,312 | INFO     | src.models.lstm_model | [LSTM] Training for state: New Hampshire
+2026-05-07 12:12:41,312 | INFO     | src.models.lstm_model | [LSTM] New Hampshire — training complete.
+2026-05-07 12:12:46,753 | INFO     | src.models.lstm_model | [LSTM] New Hampshire metrics: {'rmse': 24393531.4452, 'mae': 22726320.4012, 'mape': 69.5148}
+2026-05-07 12:13:03,257 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\New Hampshire_lstm.pkl
+2026-05-07 12:13:03,258 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:13:03,258 | INFO     | train_all | Processing state: New Mexico
+2026-05-07 12:13:03,265 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:13:03,265 | INFO     | src.models.sarima_model | [SARIMA] Training for state: New Mexico
+2026-05-07 12:13:03,266 | ERROR    | train_all |   [SARIMA] Failed for New Mexico: max_p must be >= start_p
+2026-05-07 12:13:03,267 | INFO     | src.models.prophet_model | [Prophet] Training for state: New Mexico
+2026-05-07 12:13:03,268 | ERROR    | train_all |   [Prophet] Failed for New Mexico: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:13:03,269 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: New Mexico
+2026-05-07 12:13:03,563 | INFO     | src.models.xgboost_model | [XGBoost] New Mexico metrics: {'rmse': 31460112.3569, 'mae': 22231010.3234, 'mape': 85.8048}
+2026-05-07 12:13:03,721 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\New Mexico_xgboost.pkl
+2026-05-07 12:13:03,723 | INFO     | src.models.lstm_model | [LSTM] Training for state: New Mexico
+2026-05-07 12:13:07,302 | INFO     | src.models.lstm_model | [LSTM] New Mexico — training complete.
+2026-05-07 12:13:08,759 | INFO     | src.models.lstm_model | [LSTM] New Mexico metrics: {'rmse': 31565599.7217, 'mae': 29610061.9945, 'mape': 68.4076}
+2026-05-07 12:13:21,074 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\New Mexico_lstm.pkl
+2026-05-07 12:13:21,074 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:13:21,074 | INFO     | train_all | Processing state: New York
+2026-05-07 12:13:21,089 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:13:21,089 | INFO     | src.models.sarima_model | [SARIMA] Training for state: New York
+2026-05-07 12:13:21,089 | ERROR    | train_all |   [SARIMA] Failed for New York: max_p must be >= start_p
+2026-05-07 12:13:21,091 | INFO     | src.models.prophet_model | [Prophet] Training for state: New York
+2026-05-07 12:13:21,095 | ERROR    | train_all |   [Prophet] Failed for New York: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:13:21,095 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: New York
+2026-05-07 12:13:21,677 | INFO     | src.models.xgboost_model | [XGBoost] New York metrics: {'rmse': 238136734.8678, 'mae': 172396245.1021, 'mape': 74.7419}
+2026-05-07 12:13:22,134 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\New York_xgboost.pkl
+2026-05-07 12:13:22,135 | INFO     | src.models.lstm_model | [LSTM] Training for state: New York
+2026-05-07 12:13:25,818 | INFO     | src.models.lstm_model | [LSTM] New York — training complete.
+2026-05-07 12:13:27,498 | INFO     | src.models.lstm_model | [LSTM] New York metrics: {'rmse': 192161695.7838, 'mae': 182404768.0602, 'mape': 66.8042}
+2026-05-07 12:13:37,984 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\New York_lstm.pkl
+2026-05-07 12:13:37,984 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:13:37,984 | INFO     | train_all | Processing state: North Carolina
+2026-05-07 12:13:37,992 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:13:37,992 | INFO     | src.models.sarima_model | [SARIMA] Training for state: North Carolina
+2026-05-07 12:13:37,993 | ERROR    | train_all |   [SARIMA] Failed for North Carolina: max_p must be >= start_p
+2026-05-07 12:13:37,993 | INFO     | src.models.prophet_model | [Prophet] Training for state: North Carolina
+2026-05-07 12:13:37,995 | ERROR    | train_all |   [Prophet] Failed for North Carolina: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:13:37,995 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: North Carolina
+2026-05-07 12:13:38,208 | INFO     | src.models.xgboost_model | [XGBoost] North Carolina metrics: {'rmse': 162937313.4883, 'mae': 124657163.0833, 'mape': 81.4609}
+2026-05-07 12:13:38,377 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\North Carolina_xgboost.pkl
+2026-05-07 12:13:38,377 | INFO     | src.models.lstm_model | [LSTM] Training for state: North Carolina
+2026-05-07 12:13:47,123 | INFO     | src.models.lstm_model | [LSTM] North Carolina — training complete.
+2026-05-07 12:13:50,628 | INFO     | src.models.lstm_model | [LSTM] North Carolina metrics: {'rmse': 159672367.4573, 'mae': 154304241.7378, 'mape': 63.7259}
+2026-05-07 12:14:06,768 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\North Carolina_lstm.pkl
+2026-05-07 12:14:06,768 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:14:06,768 | INFO     | train_all | Processing state: Ohio
+2026-05-07 12:14:06,785 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:14:06,785 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Ohio
+2026-05-07 12:14:06,788 | ERROR    | train_all |   [SARIMA] Failed for Ohio: max_p must be >= start_p
+2026-05-07 12:14:06,789 | INFO     | src.models.prophet_model | [Prophet] Training for state: Ohio
+2026-05-07 12:14:06,797 | ERROR    | train_all |   [Prophet] Failed for Ohio: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:14:06,799 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Ohio
+2026-05-07 12:14:07,471 | INFO     | src.models.xgboost_model | [XGBoost] Ohio metrics: {'rmse': 194819417.6066, 'mae': 143203342.65, 'mape': 78.3137}
+2026-05-07 12:14:07,948 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Ohio_xgboost.pkl
+2026-05-07 12:14:07,949 | INFO     | src.models.lstm_model | [LSTM] Training for state: Ohio
+2026-05-07 12:14:18,462 | INFO     | src.models.lstm_model | [LSTM] Ohio — training complete.
+2026-05-07 12:14:22,125 | INFO     | src.models.lstm_model | [LSTM] Ohio metrics: {'rmse': 162753123.5328, 'mae': 153893716.0568, 'mape': 67.0931}
+2026-05-07 12:14:33,405 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Ohio_lstm.pkl
+2026-05-07 12:14:33,405 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:14:33,405 | INFO     | train_all | Processing state: Oklahoma
+2026-05-07 12:14:33,411 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:14:33,411 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Oklahoma
+2026-05-07 12:14:33,411 | ERROR    | train_all |   [SARIMA] Failed for Oklahoma: max_p must be >= start_p
+2026-05-07 12:14:33,412 | INFO     | src.models.prophet_model | [Prophet] Training for state: Oklahoma
+2026-05-07 12:14:33,414 | ERROR    | train_all |   [Prophet] Failed for Oklahoma: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:14:33,414 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Oklahoma
+2026-05-07 12:14:35,569 | INFO     | src.models.xgboost_model | [XGBoost] Oklahoma metrics: {'rmse': 74774424.6238, 'mae': 57071921.0271, 'mape': 71.2168}
+2026-05-07 12:14:35,804 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Oklahoma_xgboost.pkl
+2026-05-07 12:14:35,806 | INFO     | src.models.lstm_model | [LSTM] Training for state: Oklahoma
+2026-05-07 12:14:40,703 | INFO     | src.models.lstm_model | [LSTM] Oklahoma — training complete.
+2026-05-07 12:14:42,883 | INFO     | src.models.lstm_model | [LSTM] Oklahoma metrics: {'rmse': 63842918.1169, 'mae': 60170008.2113, 'mape': 68.1713}
+2026-05-07 12:14:52,461 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Oklahoma_lstm.pkl
+2026-05-07 12:14:52,461 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:14:52,461 | INFO     | train_all | Processing state: Oregon
+2026-05-07 12:14:52,470 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:14:52,470 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Oregon
+2026-05-07 12:14:52,470 | ERROR    | train_all |   [SARIMA] Failed for Oregon: max_p must be >= start_p
+2026-05-07 12:14:52,471 | INFO     | src.models.prophet_model | [Prophet] Training for state: Oregon
+2026-05-07 12:14:52,473 | ERROR    | train_all |   [Prophet] Failed for Oregon: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:14:52,473 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Oregon
+2026-05-07 12:14:52,766 | INFO     | src.models.xgboost_model | [XGBoost] Oregon metrics: {'rmse': 52279709.5722, 'mae': 40717055.025, 'mape': 75.5517}
+2026-05-07 12:14:52,947 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Oregon_xgboost.pkl
+2026-05-07 12:14:52,947 | INFO     | src.models.lstm_model | [LSTM] Training for state: Oregon
+2026-05-07 12:14:57,599 | INFO     | src.models.lstm_model | [LSTM] Oregon — training complete.
+2026-05-07 12:14:59,739 | INFO     | src.models.lstm_model | [LSTM] Oregon metrics: {'rmse': 49161007.1381, 'mae': 44862671.1506, 'mape': 72.0775}
+2026-05-07 12:15:10,139 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Oregon_lstm.pkl
+2026-05-07 12:15:10,140 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:15:10,140 | INFO     | train_all | Processing state: Pennsylvania
+2026-05-07 12:15:10,148 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:15:10,148 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Pennsylvania
+2026-05-07 12:15:10,149 | ERROR    | train_all |   [SARIMA] Failed for Pennsylvania: max_p must be >= start_p
+2026-05-07 12:15:10,150 | INFO     | src.models.prophet_model | [Prophet] Training for state: Pennsylvania
+2026-05-07 12:15:10,150 | ERROR    | train_all |   [Prophet] Failed for Pennsylvania: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:15:10,150 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Pennsylvania
+2026-05-07 12:15:10,418 | INFO     | src.models.xgboost_model | [XGBoost] Pennsylvania metrics: {'rmse': 187533900.6977, 'mae': 138585563.825, 'mape': 65.6232}
+2026-05-07 12:15:10,607 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Pennsylvania_xgboost.pkl
+2026-05-07 12:15:10,607 | INFO     | src.models.lstm_model | [LSTM] Training for state: Pennsylvania
+2026-05-07 12:15:15,280 | INFO     | src.models.lstm_model | [LSTM] Pennsylvania — training complete.
+2026-05-07 12:15:19,104 | INFO     | src.models.lstm_model | [LSTM] Pennsylvania metrics: {'rmse': 157135772.4119, 'mae': 148491452.0861, 'mape': 67.6048}
+2026-05-07 12:15:36,280 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Pennsylvania_lstm.pkl
+2026-05-07 12:15:36,282 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:15:36,282 | INFO     | train_all | Processing state: Rhode Island
+2026-05-07 12:15:36,301 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:15:36,302 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Rhode Island
+2026-05-07 12:15:36,303 | ERROR    | train_all |   [SARIMA] Failed for Rhode Island: max_p must be >= start_p
+2026-05-07 12:15:36,303 | INFO     | src.models.prophet_model | [Prophet] Training for state: Rhode Island
+2026-05-07 12:15:36,309 | ERROR    | train_all |   [Prophet] Failed for Rhode Island: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:15:36,310 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Rhode Island
+2026-05-07 12:15:36,880 | INFO     | src.models.xgboost_model | [XGBoost] Rhode Island metrics: {'rmse': 11748143.8805, 'mae': 8704638.191, 'mape': 76.5144}
+2026-05-07 12:15:37,345 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Rhode Island_xgboost.pkl
+2026-05-07 12:15:37,346 | INFO     | src.models.lstm_model | [LSTM] Training for state: Rhode Island
+2026-05-07 12:15:47,445 | INFO     | src.models.lstm_model | [LSTM] Rhode Island — training complete.
+2026-05-07 12:15:50,826 | INFO     | src.models.lstm_model | [LSTM] Rhode Island metrics: {'rmse': 11483134.6315, 'mae': 10723829.3546, 'mape': 69.5633}
+2026-05-07 12:16:08,307 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Rhode Island_lstm.pkl
+2026-05-07 12:16:08,307 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:16:08,307 | INFO     | train_all | Processing state: South Carolina
+2026-05-07 12:16:08,327 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:16:08,329 | INFO     | src.models.sarima_model | [SARIMA] Training for state: South Carolina
+2026-05-07 12:16:08,330 | ERROR    | train_all |   [SARIMA] Failed for South Carolina: max_p must be >= start_p
+2026-05-07 12:16:08,331 | INFO     | src.models.prophet_model | [Prophet] Training for state: South Carolina
+2026-05-07 12:16:08,336 | ERROR    | train_all |   [Prophet] Failed for South Carolina: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:16:08,337 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: South Carolina
+2026-05-07 12:16:08,963 | INFO     | src.models.xgboost_model | [XGBoost] South Carolina metrics: {'rmse': 93791932.4004, 'mae': 70368301.1198, 'mape': 68.2933}
+2026-05-07 12:16:09,424 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\South Carolina_xgboost.pkl
+2026-05-07 12:16:09,425 | INFO     | src.models.lstm_model | [LSTM] Training for state: South Carolina
+2026-05-07 12:16:18,451 | INFO     | src.models.lstm_model | [LSTM] South Carolina — training complete.
+2026-05-07 12:16:22,531 | INFO     | src.models.lstm_model | [LSTM] South Carolina metrics: {'rmse': 84951999.2449, 'mae': 79662105.9649, 'mape': 68.757}
+2026-05-07 12:16:39,710 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\South Carolina_lstm.pkl
+2026-05-07 12:16:39,711 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:16:39,711 | INFO     | train_all | Processing state: South Dakota
+2026-05-07 12:16:39,725 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:16:39,726 | INFO     | src.models.sarima_model | [SARIMA] Training for state: South Dakota
+2026-05-07 12:16:39,726 | ERROR    | train_all |   [SARIMA] Failed for South Dakota: max_p must be >= start_p
+2026-05-07 12:16:39,728 | INFO     | src.models.prophet_model | [Prophet] Training for state: South Dakota
+2026-05-07 12:16:39,731 | ERROR    | train_all |   [Prophet] Failed for South Dakota: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:16:39,732 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: South Dakota
+2026-05-07 12:16:40,315 | INFO     | src.models.xgboost_model | [XGBoost] South Dakota metrics: {'rmse': 15064217.1867, 'mae': 11305123.538, 'mape': 69.5729}
+2026-05-07 12:16:40,764 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\South Dakota_xgboost.pkl
+2026-05-07 12:16:40,765 | INFO     | src.models.lstm_model | [LSTM] Training for state: South Dakota
+2026-05-07 12:16:54,772 | INFO     | src.models.lstm_model | [LSTM] South Dakota — training complete.
+2026-05-07 12:16:58,463 | INFO     | src.models.lstm_model | [LSTM] South Dakota metrics: {'rmse': 13085201.4066, 'mae': 12806098.1981, 'mape': 60.9712}
+2026-05-07 12:17:15,334 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\South Dakota_lstm.pkl
+2026-05-07 12:17:15,334 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:17:15,334 | INFO     | train_all | Processing state: Tennessee
+2026-05-07 12:17:15,348 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:17:15,349 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Tennessee
+2026-05-07 12:17:15,349 | ERROR    | train_all |   [SARIMA] Failed for Tennessee: max_p must be >= start_p
+2026-05-07 12:17:15,350 | INFO     | src.models.prophet_model | [Prophet] Training for state: Tennessee
+2026-05-07 12:17:15,355 | ERROR    | train_all |   [Prophet] Failed for Tennessee: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:17:15,355 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Tennessee
+2026-05-07 12:17:15,933 | INFO     | src.models.xgboost_model | [XGBoost] Tennessee metrics: {'rmse': 119704608.8619, 'mae': 92203388.25, 'mape': 72.982}
+2026-05-07 12:17:16,350 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Tennessee_xgboost.pkl
+2026-05-07 12:17:16,352 | INFO     | src.models.lstm_model | [LSTM] Training for state: Tennessee
+2026-05-07 12:17:26,041 | INFO     | src.models.lstm_model | [LSTM] Tennessee — training complete.
+2026-05-07 12:17:29,629 | INFO     | src.models.lstm_model | [LSTM] Tennessee metrics: {'rmse': 110375520.3206, 'mae': 100524354.1295, 'mape': 72.0392}
+2026-05-07 12:17:46,756 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Tennessee_lstm.pkl
+2026-05-07 12:17:46,756 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:17:46,756 | INFO     | train_all | Processing state: Texas
+2026-05-07 12:17:46,771 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:17:46,771 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Texas
+2026-05-07 12:17:46,772 | ERROR    | train_all |   [SARIMA] Failed for Texas: max_p must be >= start_p
+2026-05-07 12:17:46,774 | INFO     | src.models.prophet_model | [Prophet] Training for state: Texas
+2026-05-07 12:17:46,776 | ERROR    | train_all |   [Prophet] Failed for Texas: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:17:46,777 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Texas
+2026-05-07 12:17:47,372 | INFO     | src.models.xgboost_model | [XGBoost] Texas metrics: {'rmse': 443933859.8188, 'mae': 322571565.325, 'mape': 63.2153}
+2026-05-07 12:17:47,780 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Texas_xgboost.pkl
+2026-05-07 12:17:47,781 | INFO     | src.models.lstm_model | [LSTM] Training for state: Texas
+2026-05-07 12:17:56,611 | INFO     | src.models.lstm_model | [LSTM] Texas — training complete.
+2026-05-07 12:17:59,973 | INFO     | src.models.lstm_model | [LSTM] Texas metrics: {'rmse': 383554957.0749, 'mae': 347892408.0942, 'mape': 72.2559}
+2026-05-07 12:18:16,712 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Texas_lstm.pkl
+2026-05-07 12:18:16,713 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:18:16,713 | INFO     | train_all | Processing state: Utah
+2026-05-07 12:18:16,728 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:18:16,728 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Utah
+2026-05-07 12:18:16,729 | ERROR    | train_all |   [SARIMA] Failed for Utah: max_p must be >= start_p
+2026-05-07 12:18:16,730 | INFO     | src.models.prophet_model | [Prophet] Training for state: Utah
+2026-05-07 12:18:16,732 | ERROR    | train_all |   [Prophet] Failed for Utah: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:18:16,733 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Utah
+2026-05-07 12:18:17,291 | INFO     | src.models.xgboost_model | [XGBoost] Utah metrics: {'rmse': 36339598.2213, 'mae': 27070905.5823, 'mape': 77.9146}
+2026-05-07 12:18:17,693 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Utah_xgboost.pkl
+2026-05-07 12:18:17,695 | INFO     | src.models.lstm_model | [LSTM] Training for state: Utah
+2026-05-07 12:18:27,650 | INFO     | src.models.lstm_model | [LSTM] Utah — training complete.
+2026-05-07 12:18:31,226 | INFO     | src.models.lstm_model | [LSTM] Utah metrics: {'rmse': 35647223.9907, 'mae': 32522308.4419, 'mape': 71.6587}
+2026-05-07 12:18:47,660 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Utah_lstm.pkl
+2026-05-07 12:18:47,660 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:18:47,660 | INFO     | train_all | Processing state: Vermont
+2026-05-07 12:18:47,678 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:18:47,678 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Vermont
+2026-05-07 12:18:47,678 | ERROR    | train_all |   [SARIMA] Failed for Vermont: max_p must be >= start_p
+2026-05-07 12:18:47,680 | INFO     | src.models.prophet_model | [Prophet] Training for state: Vermont
+2026-05-07 12:18:47,683 | ERROR    | train_all |   [Prophet] Failed for Vermont: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:18:47,684 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Vermont
+2026-05-07 12:18:48,272 | INFO     | src.models.xgboost_model | [XGBoost] Vermont metrics: {'rmse': 7836889.8115, 'mae': 5386141.2783, 'mape': 85.3128}
+2026-05-07 12:18:48,727 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Vermont_xgboost.pkl
+2026-05-07 12:18:48,728 | INFO     | src.models.lstm_model | [LSTM] Training for state: Vermont
+2026-05-07 12:18:57,673 | INFO     | src.models.lstm_model | [LSTM] Vermont — training complete.
+2026-05-07 12:19:01,265 | INFO     | src.models.lstm_model | [LSTM] Vermont metrics: {'rmse': 7814599.4708, 'mae': 7074017.8826, 'mape': 72.8355}
+2026-05-07 12:19:17,868 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Vermont_lstm.pkl
+2026-05-07 12:19:17,869 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:19:17,869 | INFO     | train_all | Processing state: Virginia
+2026-05-07 12:19:17,884 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:19:17,884 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Virginia
+2026-05-07 12:19:17,885 | ERROR    | train_all |   [SARIMA] Failed for Virginia: max_p must be >= start_p
+2026-05-07 12:19:17,886 | INFO     | src.models.prophet_model | [Prophet] Training for state: Virginia
+2026-05-07 12:19:17,890 | ERROR    | train_all |   [Prophet] Failed for Virginia: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:19:17,892 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Virginia
+2026-05-07 12:19:18,470 | INFO     | src.models.xgboost_model | [XGBoost] Virginia metrics: {'rmse': 125141756.4608, 'mae': 92954280.2781, 'mape': 67.7472}
+2026-05-07 12:19:18,911 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Virginia_xgboost.pkl
+2026-05-07 12:19:18,912 | INFO     | src.models.lstm_model | [LSTM] Training for state: Virginia
+2026-05-07 12:19:29,737 | INFO     | src.models.lstm_model | [LSTM] Virginia — training complete.
+2026-05-07 12:19:33,234 | INFO     | src.models.lstm_model | [LSTM] Virginia metrics: {'rmse': 128601364.9627, 'mae': 122525875.3853, 'mape': 66.0398}
+2026-05-07 12:19:50,120 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Virginia_lstm.pkl
+2026-05-07 12:19:50,121 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:19:50,121 | INFO     | train_all | Processing state: Washington
+2026-05-07 12:19:50,141 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:19:50,141 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Washington
+2026-05-07 12:19:50,142 | ERROR    | train_all |   [SARIMA] Failed for Washington: max_p must be >= start_p
+2026-05-07 12:19:50,143 | INFO     | src.models.prophet_model | [Prophet] Training for state: Washington
+2026-05-07 12:19:50,147 | ERROR    | train_all |   [Prophet] Failed for Washington: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:19:50,149 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Washington
+2026-05-07 12:19:50,797 | INFO     | src.models.xgboost_model | [XGBoost] Washington metrics: {'rmse': 90466988.5566, 'mae': 68068842.8094, 'mape': 68.5899}
+2026-05-07 12:19:51,214 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Washington_xgboost.pkl
+2026-05-07 12:19:51,214 | INFO     | src.models.lstm_model | [LSTM] Training for state: Washington
+2026-05-07 12:20:04,618 | INFO     | src.models.lstm_model | [LSTM] Washington — training complete.
+2026-05-07 12:20:08,137 | INFO     | src.models.lstm_model | [LSTM] Washington metrics: {'rmse': 81717966.2525, 'mae': 74937750.2607, 'mape': 71.6663}
+2026-05-07 12:20:26,424 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Washington_lstm.pkl
+2026-05-07 12:20:26,424 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:20:26,424 | INFO     | train_all | Processing state: West Virginia
+2026-05-07 12:20:26,441 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:20:26,441 | INFO     | src.models.sarima_model | [SARIMA] Training for state: West Virginia
+2026-05-07 12:20:26,441 | ERROR    | train_all |   [SARIMA] Failed for West Virginia: max_p must be >= start_p
+2026-05-07 12:20:26,442 | INFO     | src.models.prophet_model | [Prophet] Training for state: West Virginia
+2026-05-07 12:20:26,446 | ERROR    | train_all |   [Prophet] Failed for West Virginia: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:20:26,447 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: West Virginia
+2026-05-07 12:20:27,012 | INFO     | src.models.xgboost_model | [XGBoost] West Virginia metrics: {'rmse': 32847496.8312, 'mae': 24940599.5687, 'mape': 77.2292}
+2026-05-07 12:20:27,475 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\West Virginia_xgboost.pkl
+2026-05-07 12:20:27,475 | INFO     | src.models.lstm_model | [LSTM] Training for state: West Virginia
+2026-05-07 12:20:36,858 | INFO     | src.models.lstm_model | [LSTM] West Virginia — training complete.
+2026-05-07 12:20:40,879 | INFO     | src.models.lstm_model | [LSTM] West Virginia metrics: {'rmse': 32193402.9966, 'mae': 29208353.3998, 'mape': 72.5319}
+2026-05-07 12:20:59,908 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\West Virginia_lstm.pkl
+2026-05-07 12:20:59,908 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:20:59,910 | INFO     | train_all | Processing state: Wisconsin
+2026-05-07 12:20:59,926 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:20:59,926 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Wisconsin
+2026-05-07 12:20:59,927 | ERROR    | train_all |   [SARIMA] Failed for Wisconsin: max_p must be >= start_p
+2026-05-07 12:20:59,928 | INFO     | src.models.prophet_model | [Prophet] Training for state: Wisconsin
+2026-05-07 12:20:59,932 | ERROR    | train_all |   [Prophet] Failed for Wisconsin: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:20:59,932 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Wisconsin
+2026-05-07 12:21:00,521 | INFO     | src.models.xgboost_model | [XGBoost] Wisconsin metrics: {'rmse': 83143695.4524, 'mae': 60940957.7896, 'mape': 65.7205}
+2026-05-07 12:21:00,962 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Wisconsin_xgboost.pkl
+2026-05-07 12:21:00,963 | INFO     | src.models.lstm_model | [LSTM] Training for state: Wisconsin
+2026-05-07 12:21:11,105 | INFO     | src.models.lstm_model | [LSTM] Wisconsin — training complete.
+2026-05-07 12:21:15,237 | INFO     | src.models.lstm_model | [LSTM] Wisconsin metrics: {'rmse': 69348584.0722, 'mae': 66637669.8874, 'mape': 64.9337}
+2026-05-07 12:21:33,762 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Wisconsin_lstm.pkl
+2026-05-07 12:21:33,762 | INFO     | train_all | ------------------------------------------------------------
+2026-05-07 12:21:33,763 | INFO     | train_all | Processing state: Wyoming
+2026-05-07 12:21:33,781 | INFO     | train_all |   Split — Train: 204, Val: 25, Test: 24
+2026-05-07 12:21:33,781 | INFO     | src.models.sarima_model | [SARIMA] Training for state: Wyoming
+2026-05-07 12:21:33,784 | ERROR    | train_all |   [SARIMA] Failed for Wyoming: max_p must be >= start_p
+2026-05-07 12:21:33,784 | INFO     | src.models.prophet_model | [Prophet] Training for state: Wyoming
+2026-05-07 12:21:33,790 | ERROR    | train_all |   [Prophet] Failed for Wyoming: 'Prophet' object has no attribute 'stan_backend'
+2026-05-07 12:21:33,790 | INFO     | src.models.xgboost_model | [XGBoost] Training for state: Wyoming
+2026-05-07 12:21:34,360 | INFO     | src.models.xgboost_model | [XGBoost] Wyoming metrics: {'rmse': 9683377.3454, 'mae': 6181046.9732, 'mape': 94.6422}
+2026-05-07 12:21:34,740 | INFO     | src.models.xgboost_model | [XGBoost] Model saved to C:\forecasting_system\artifacts\models\Wyoming_xgboost.pkl
+2026-05-07 12:21:34,740 | INFO     | src.models.lstm_model | [LSTM] Training for state: Wyoming
+2026-05-07 12:21:45,229 | INFO     | src.models.lstm_model | [LSTM] Wyoming — training complete.
+2026-05-07 12:21:49,025 | INFO     | src.models.lstm_model | [LSTM] Wyoming metrics: {'rmse': 9192732.7872, 'mae': 8491305.1147, 'mape': 70.6773}
+2026-05-07 12:22:06,226 | INFO     | src.models.lstm_model | [LSTM] Model saved to C:\forecasting_system\artifacts\models\Wyoming_lstm.pkl
+2026-05-07 12:22:06,227 | INFO     | train_all | ============================================================
+2026-05-07 12:22:06,227 | INFO     | train_all | STEP 5 / 5: Selecting best models ...
+2026-05-07 12:22:06,229 | INFO     | src.model_selector | [Selector] Alabama — Best model: LSTM (RMSE=87982519.7525)
+2026-05-07 12:22:06,229 | INFO     | src.model_selector | [Selector] Alabama — All model metrics:
+2026-05-07 12:22:06,229 | INFO     | src.model_selector |   LSTM       | RMSE=87982519.7525 | MAE=80852222.1429 | MAPE=70.9003
+2026-05-07 12:22:06,229 | INFO     | src.model_selector |   XGBoost    | RMSE=108160307.1934 | MAE=79353008.1865 | MAPE=53.2100
+2026-05-07 12:22:06,230 | INFO     | src.model_selector | [Selector] Arizona — Best model: LSTM (RMSE=99058937.9997)
+2026-05-07 12:22:06,230 | INFO     | src.model_selector | [Selector] Arizona — All model metrics:
+2026-05-07 12:22:06,230 | INFO     | src.model_selector |   LSTM       | RMSE=99058937.9997 | MAE=94362176.7615 | MAPE=66.2604
+2026-05-07 12:22:06,230 | INFO     | src.model_selector |   XGBoost    | RMSE=101324153.1569 | MAE=63476964.2435 | MAPE=95.4205
+2026-05-07 12:22:06,230 | INFO     | src.model_selector | [Selector] Arkansas — Best model: LSTM (RMSE=48069165.1104)
+2026-05-07 12:22:06,230 | INFO     | src.model_selector | [Selector] Arkansas — All model metrics:
+2026-05-07 12:22:06,230 | INFO     | src.model_selector |   LSTM       | RMSE=48069165.1104 | MAE=45078591.3899 | MAPE=68.5526
+2026-05-07 12:22:06,230 | INFO     | src.model_selector |   XGBoost    | RMSE=56593114.7838 | MAE=41308589.2940 | MAPE=57.5129
+2026-05-07 12:22:06,231 | INFO     | src.model_selector | [Selector] California — Best model: LSTM (RMSE=367986890.4875)
+2026-05-07 12:22:06,231 | INFO     | src.model_selector | [Selector] California — All model metrics:
+2026-05-07 12:22:06,233 | INFO     | src.model_selector |   LSTM       | RMSE=367986890.4875 | MAE=338812862.4184 | MAPE=70.4860
+2026-05-07 12:22:06,233 | INFO     | src.model_selector |   XGBoost    | RMSE=378879756.1212 | MAE=235601926.5083 | MAPE=92.7282
+2026-05-07 12:22:06,233 | INFO     | src.model_selector | [Selector] Colorado — Best model: XGBoost (RMSE=75626910.9171)
+2026-05-07 12:22:06,233 | INFO     | src.model_selector | [Selector] Colorado — All model metrics:
+2026-05-07 12:22:06,233 | INFO     | src.model_selector |   XGBoost    | RMSE=75626910.9171 | MAE=48782041.9156 | MAPE=87.8791
+2026-05-07 12:22:06,234 | INFO     | src.model_selector |   LSTM       | RMSE=77853641.8650 | MAE=74406439.2606 | MAPE=65.6732
+2026-05-07 12:22:06,234 | INFO     | src.model_selector | [Selector] Connecticut — Best model: LSTM (RMSE=38403798.7382)
+2026-05-07 12:22:06,234 | INFO     | src.model_selector | [Selector] Connecticut — All model metrics:
+2026-05-07 12:22:06,234 | INFO     | src.model_selector |   LSTM       | RMSE=38403798.7382 | MAE=34871425.9146 | MAPE=72.2350
+2026-05-07 12:22:06,235 | INFO     | src.model_selector |   XGBoost    | RMSE=48688427.1633 | MAE=36146434.8896 | MAPE=62.2655
+2026-05-07 12:22:06,235 | INFO     | src.model_selector | [Selector] Florida — Best model: LSTM (RMSE=322445114.6505)
+2026-05-07 12:22:06,236 | INFO     | src.model_selector | [Selector] Florida — All model metrics:
+2026-05-07 12:22:06,236 | INFO     | src.model_selector |   LSTM       | RMSE=322445114.6505 | MAE=296322647.7844 | MAPE=70.5885
+2026-05-07 12:22:06,236 | INFO     | src.model_selector |   XGBoost    | RMSE=350288356.8331 | MAE=224814837.9500 | MAPE=97.0318
+2026-05-07 12:22:06,238 | INFO     | src.model_selector | [Selector] Georgia — Best model: LSTM (RMSE=162425993.8408)
+2026-05-07 12:22:06,238 | INFO     | src.model_selector | [Selector] Georgia — All model metrics:
+2026-05-07 12:22:06,238 | INFO     | src.model_selector |   LSTM       | RMSE=162425993.8408 | MAE=149253139.6548 | MAPE=70.8741
+2026-05-07 12:22:06,239 | INFO     | src.model_selector |   XGBoost    | RMSE=206140540.8782 | MAE=154608901.1750 | MAPE=64.8904
+2026-05-07 12:22:06,239 | INFO     | src.model_selector | [Selector] Illinois — Best model: LSTM (RMSE=134779688.7198)
+2026-05-07 12:22:06,239 | INFO     | src.model_selector | [Selector] Illinois — All model metrics:
+2026-05-07 12:22:06,239 | INFO     | src.model_selector |   LSTM       | RMSE=134779688.7198 | MAE=121146121.9720 | MAPE=72.9516
+2026-05-07 12:22:06,239 | INFO     | src.model_selector |   XGBoost    | RMSE=160258021.1903 | MAE=114392167.8854 | MAPE=63.1961
+2026-05-07 12:22:06,240 | INFO     | src.model_selector | [Selector] Indiana — Best model: LSTM (RMSE=97146051.0638)
+2026-05-07 12:22:06,240 | INFO     | src.model_selector | [Selector] Indiana — All model metrics:
+2026-05-07 12:22:06,240 | INFO     | src.model_selector |   LSTM       | RMSE=97146051.0638 | MAE=92140320.1085 | MAPE=66.8420
+2026-05-07 12:22:06,240 | INFO     | src.model_selector |   XGBoost    | RMSE=117332182.0964 | MAE=83671568.3260 | MAPE=68.9576
+2026-05-07 12:22:06,240 | INFO     | src.model_selector | [Selector] Iowa — Best model: LSTM (RMSE=50642501.8588)
+2026-05-07 12:22:06,242 | INFO     | src.model_selector | [Selector] Iowa — All model metrics:
+2026-05-07 12:22:06,242 | INFO     | src.model_selector |   LSTM       | RMSE=50642501.8588 | MAE=47793015.3805 | MAPE=67.9198
+2026-05-07 12:22:06,242 | INFO     | src.model_selector |   XGBoost    | RMSE=56557931.3352 | MAE=41516944.1615 | MAPE=68.0354
+2026-05-07 12:22:06,243 | INFO     | src.model_selector | [Selector] Kansas — Best model: LSTM (RMSE=38681768.3582)
+2026-05-07 12:22:06,243 | INFO     | src.model_selector | [Selector] Kansas — All model metrics:
+2026-05-07 12:22:06,243 | INFO     | src.model_selector |   LSTM       | RMSE=38681768.3582 | MAE=35653430.8287 | MAPE=70.8283
+2026-05-07 12:22:06,243 | INFO     | src.model_selector |   XGBoost    | RMSE=47589120.6924 | MAE=35010909.6208 | MAPE=71.3110
+2026-05-07 12:22:06,243 | INFO     | src.model_selector | [Selector] Kentucky — Best model: LSTM (RMSE=74680471.9491)
+2026-05-07 12:22:06,243 | INFO     | src.model_selector | [Selector] Kentucky — All model metrics:
+2026-05-07 12:22:06,243 | INFO     | src.model_selector |   LSTM       | RMSE=74680471.9491 | MAE=69946584.8872 | MAPE=68.7468
+2026-05-07 12:22:06,245 | INFO     | src.model_selector |   XGBoost    | RMSE=78585040.4693 | MAE=57768439.0008 | MAPE=80.4765
+2026-05-07 12:22:06,246 | INFO     | src.model_selector | [Selector] Louisiana — Best model: LSTM (RMSE=79371572.6609)
+2026-05-07 12:22:06,246 | INFO     | src.model_selector | [Selector] Louisiana — All model metrics:
+2026-05-07 12:22:06,246 | INFO     | src.model_selector |   LSTM       | RMSE=79371572.6609 | MAE=74542456.3693 | MAPE=68.1091
+2026-05-07 12:22:06,246 | INFO     | src.model_selector |   XGBoost    | RMSE=105785829.1554 | MAE=75772946.6083 | MAPE=80.2361
+2026-05-07 12:22:06,247 | INFO     | src.model_selector | [Selector] Maine — Best model: XGBoost (RMSE=19920987.4858)
+2026-05-07 12:22:06,247 | INFO     | src.model_selector | [Selector] Maine — All model metrics:
+2026-05-07 12:22:06,247 | INFO     | src.model_selector |   XGBoost    | RMSE=19920987.4858 | MAE=13984692.9613 | MAPE=68.0734
+2026-05-07 12:22:06,247 | INFO     | src.model_selector |   LSTM       | RMSE=20161036.1523 | MAE=18810575.9559 | MAPE=69.1493
+2026-05-07 12:22:06,248 | INFO     | src.model_selector | [Selector] Maryland — Best model: LSTM (RMSE=70616686.7879)
+2026-05-07 12:22:06,248 | INFO     | src.model_selector | [Selector] Maryland — All model metrics:
+2026-05-07 12:22:06,248 | INFO     | src.model_selector |   LSTM       | RMSE=70616686.7879 | MAE=67000044.0459 | MAPE=66.6285
+2026-05-07 12:22:06,248 | INFO     | src.model_selector |   XGBoost    | RMSE=91229166.9477 | MAE=64261798.1224 | MAPE=69.1807
+2026-05-07 12:22:06,249 | INFO     | src.model_selector | [Selector] Massachusetts — Best model: LSTM (RMSE=78640738.5589)
+2026-05-07 12:22:06,249 | INFO     | src.model_selector | [Selector] Massachusetts — All model metrics:
+2026-05-07 12:22:06,249 | INFO     | src.model_selector |   LSTM       | RMSE=78640738.5589 | MAE=70748374.2879 | MAPE=73.0748
+2026-05-07 12:22:06,249 | INFO     | src.model_selector |   XGBoost    | RMSE=78903566.0500 | MAE=60570041.7625 | MAPE=74.2141
+2026-05-07 12:22:06,250 | INFO     | src.model_selector | [Selector] Michigan — Best model: LSTM (RMSE=126127085.0615)
+2026-05-07 12:22:06,250 | INFO     | src.model_selector | [Selector] Michigan — All model metrics:
+2026-05-07 12:22:06,250 | INFO     | src.model_selector |   LSTM       | RMSE=126127085.0615 | MAE=117932763.0692 | MAPE=68.8091
+2026-05-07 12:22:06,250 | INFO     | src.model_selector |   XGBoost    | RMSE=129885432.1572 | MAE=101182198.1708 | MAPE=81.6908
+2026-05-07 12:22:06,251 | INFO     | src.model_selector | [Selector] Minnesota — Best model: LSTM (RMSE=65503725.1539)
+2026-05-07 12:22:06,251 | INFO     | src.model_selector | [Selector] Minnesota — All model metrics:
+2026-05-07 12:22:06,252 | INFO     | src.model_selector |   LSTM       | RMSE=65503725.1539 | MAE=57843450.7451 | MAPE=74.8869
+2026-05-07 12:22:06,252 | INFO     | src.model_selector |   XGBoost    | RMSE=68706258.8100 | MAE=51030545.2865 | MAPE=81.1418
+2026-05-07 12:22:06,253 | INFO     | src.model_selector | [Selector] Mississippi — Best model: XGBoost (RMSE=51776101.1102)
+2026-05-07 12:22:06,253 | INFO     | src.model_selector | [Selector] Mississippi — All model metrics:
+2026-05-07 12:22:06,253 | INFO     | src.model_selector |   XGBoost    | RMSE=51776101.1102 | MAE=30708877.9122 | MAPE=89.4817
+2026-05-07 12:22:06,253 | INFO     | src.model_selector |   LSTM       | RMSE=55165615.3296 | MAE=53146659.5179 | MAPE=64.5172
+2026-05-07 12:22:06,254 | INFO     | src.model_selector | [Selector] Missouri — Best model: LSTM (RMSE=83638427.1137)
+2026-05-07 12:22:06,254 | INFO     | src.model_selector | [Selector] Missouri — All model metrics:
+2026-05-07 12:22:06,254 | INFO     | src.model_selector |   LSTM       | RMSE=83638427.1137 | MAE=77775825.0000 | MAPE=69.7376
+2026-05-07 12:22:06,255 | INFO     | src.model_selector |   XGBoost    | RMSE=99456520.0458 | MAE=71798924.1943 | MAPE=66.9380
+2026-05-07 12:22:06,255 | INFO     | src.model_selector | [Selector] Nebraska — Best model: LSTM (RMSE=26826510.3612)
+2026-05-07 12:22:06,255 | INFO     | src.model_selector | [Selector] Nebraska — All model metrics:
+2026-05-07 12:22:06,255 | INFO     | src.model_selector |   LSTM       | RMSE=26826510.3612 | MAE=25046933.5402 | MAPE=69.3917
+2026-05-07 12:22:06,255 | INFO     | src.model_selector |   XGBoost    | RMSE=27501458.7199 | MAE=15374389.7245 | MAPE=96.0228
+2026-05-07 12:22:06,257 | INFO     | src.model_selector | [Selector] Nevada — Best model: LSTM (RMSE=44316769.3812)
+2026-05-07 12:22:06,257 | INFO     | src.model_selector | [Selector] Nevada — All model metrics:
+2026-05-07 12:22:06,257 | INFO     | src.model_selector |   LSTM       | RMSE=44316769.3812 | MAE=41436491.1593 | MAPE=68.9099
+2026-05-07 12:22:06,257 | INFO     | src.model_selector |   XGBoost    | RMSE=45123859.9658 | MAE=28953247.3896 | MAPE=92.1606
+2026-05-07 12:22:06,257 | INFO     | src.model_selector | [Selector] New Hampshire — Best model: LSTM (RMSE=24393531.4452)
+2026-05-07 12:22:06,257 | INFO     | src.model_selector | [Selector] New Hampshire — All model metrics:
+2026-05-07 12:22:06,257 | INFO     | src.model_selector |   LSTM       | RMSE=24393531.4452 | MAE=22726320.4012 | MAPE=69.5148
+2026-05-07 12:22:06,259 | INFO     | src.model_selector |   XGBoost    | RMSE=24607008.1926 | MAE=17402161.1331 | MAPE=81.5482
+2026-05-07 12:22:06,259 | INFO     | src.model_selector | [Selector] New Mexico — Best model: XGBoost (RMSE=31460112.3569)
+2026-05-07 12:22:06,259 | INFO     | src.model_selector | [Selector] New Mexico — All model metrics:
+2026-05-07 12:22:06,260 | INFO     | src.model_selector |   XGBoost    | RMSE=31460112.3569 | MAE=22231010.3234 | MAPE=85.8048
+2026-05-07 12:22:06,260 | INFO     | src.model_selector |   LSTM       | RMSE=31565599.7217 | MAE=29610061.9945 | MAPE=68.4076
+2026-05-07 12:22:06,260 | INFO     | src.model_selector | [Selector] New York — Best model: LSTM (RMSE=192161695.7838)
+2026-05-07 12:22:06,260 | INFO     | src.model_selector | [Selector] New York — All model metrics:
+2026-05-07 12:22:06,261 | INFO     | src.model_selector |   LSTM       | RMSE=192161695.7838 | MAE=182404768.0602 | MAPE=66.8042
+2026-05-07 12:22:06,261 | INFO     | src.model_selector |   XGBoost    | RMSE=238136734.8678 | MAE=172396245.1021 | MAPE=74.7419
+2026-05-07 12:22:06,262 | INFO     | src.model_selector | [Selector] North Carolina — Best model: LSTM (RMSE=159672367.4573)
+2026-05-07 12:22:06,262 | INFO     | src.model_selector | [Selector] North Carolina — All model metrics:
+2026-05-07 12:22:06,262 | INFO     | src.model_selector |   LSTM       | RMSE=159672367.4573 | MAE=154304241.7378 | MAPE=63.7259
+2026-05-07 12:22:06,262 | INFO     | src.model_selector |   XGBoost    | RMSE=162937313.4883 | MAE=124657163.0833 | MAPE=81.4609
+2026-05-07 12:22:06,263 | INFO     | src.model_selector | [Selector] Ohio — Best model: LSTM (RMSE=162753123.5328)
+2026-05-07 12:22:06,263 | INFO     | src.model_selector | [Selector] Ohio — All model metrics:
+2026-05-07 12:22:06,263 | INFO     | src.model_selector |   LSTM       | RMSE=162753123.5328 | MAE=153893716.0568 | MAPE=67.0931
+2026-05-07 12:22:06,263 | INFO     | src.model_selector |   XGBoost    | RMSE=194819417.6066 | MAE=143203342.6500 | MAPE=78.3137
+2026-05-07 12:22:06,264 | INFO     | src.model_selector | [Selector] Oklahoma — Best model: LSTM (RMSE=63842918.1169)
+2026-05-07 12:22:06,264 | INFO     | src.model_selector | [Selector] Oklahoma — All model metrics:
+2026-05-07 12:22:06,264 | INFO     | src.model_selector |   LSTM       | RMSE=63842918.1169 | MAE=60170008.2113 | MAPE=68.1713
+2026-05-07 12:22:06,264 | INFO     | src.model_selector |   XGBoost    | RMSE=74774424.6238 | MAE=57071921.0271 | MAPE=71.2168
+2026-05-07 12:22:06,266 | INFO     | src.model_selector | [Selector] Oregon — Best model: LSTM (RMSE=49161007.1381)
+2026-05-07 12:22:06,266 | INFO     | src.model_selector | [Selector] Oregon — All model metrics:
+2026-05-07 12:22:06,266 | INFO     | src.model_selector |   LSTM       | RMSE=49161007.1381 | MAE=44862671.1506 | MAPE=72.0775
+2026-05-07 12:22:06,266 | INFO     | src.model_selector |   XGBoost    | RMSE=52279709.5722 | MAE=40717055.0250 | MAPE=75.5517
+2026-05-07 12:22:06,268 | INFO     | src.model_selector | [Selector] Pennsylvania — Best model: LSTM (RMSE=157135772.4119)
+2026-05-07 12:22:06,268 | INFO     | src.model_selector | [Selector] Pennsylvania — All model metrics:
+2026-05-07 12:22:06,268 | INFO     | src.model_selector |   LSTM       | RMSE=157135772.4119 | MAE=148491452.0861 | MAPE=67.6048
+2026-05-07 12:22:06,268 | INFO     | src.model_selector |   XGBoost    | RMSE=187533900.6977 | MAE=138585563.8250 | MAPE=65.6232
+2026-05-07 12:22:06,268 | INFO     | src.model_selector | [Selector] Rhode Island — Best model: LSTM (RMSE=11483134.6315)
+2026-05-07 12:22:06,268 | INFO     | src.model_selector | [Selector] Rhode Island — All model metrics:
+2026-05-07 12:22:06,268 | INFO     | src.model_selector |   LSTM       | RMSE=11483134.6315 | MAE=10723829.3546 | MAPE=69.5633
+2026-05-07 12:22:06,269 | INFO     | src.model_selector |   XGBoost    | RMSE=11748143.8805 | MAE=8704638.1910 | MAPE=76.5144
+2026-05-07 12:22:06,269 | INFO     | src.model_selector | [Selector] South Carolina — Best model: LSTM (RMSE=84951999.2449)
+2026-05-07 12:22:06,269 | INFO     | src.model_selector | [Selector] South Carolina — All model metrics:
+2026-05-07 12:22:06,269 | INFO     | src.model_selector |   LSTM       | RMSE=84951999.2449 | MAE=79662105.9649 | MAPE=68.7570
+2026-05-07 12:22:06,269 | INFO     | src.model_selector |   XGBoost    | RMSE=93791932.4004 | MAE=70368301.1198 | MAPE=68.2933
+2026-05-07 12:22:06,269 | INFO     | src.model_selector | [Selector] South Dakota — Best model: LSTM (RMSE=13085201.4066)
+2026-05-07 12:22:06,269 | INFO     | src.model_selector | [Selector] South Dakota — All model metrics:
+2026-05-07 12:22:06,269 | INFO     | src.model_selector |   LSTM       | RMSE=13085201.4066 | MAE=12806098.1981 | MAPE=60.9712
+2026-05-07 12:22:06,269 | INFO     | src.model_selector |   XGBoost    | RMSE=15064217.1867 | MAE=11305123.5380 | MAPE=69.5729
+2026-05-07 12:22:06,270 | INFO     | src.model_selector | [Selector] Tennessee — Best model: LSTM (RMSE=110375520.3206)
+2026-05-07 12:22:06,270 | INFO     | src.model_selector | [Selector] Tennessee — All model metrics:
+2026-05-07 12:22:06,270 | INFO     | src.model_selector |   LSTM       | RMSE=110375520.3206 | MAE=100524354.1295 | MAPE=72.0392
+2026-05-07 12:22:06,270 | INFO     | src.model_selector |   XGBoost    | RMSE=119704608.8619 | MAE=92203388.2500 | MAPE=72.9820
+2026-05-07 12:22:06,270 | INFO     | src.model_selector | [Selector] Texas — Best model: LSTM (RMSE=383554957.0749)
+2026-05-07 12:22:06,270 | INFO     | src.model_selector | [Selector] Texas — All model metrics:
+2026-05-07 12:22:06,271 | INFO     | src.model_selector |   LSTM       | RMSE=383554957.0749 | MAE=347892408.0942 | MAPE=72.2559
+2026-05-07 12:22:06,271 | INFO     | src.model_selector |   XGBoost    | RMSE=443933859.8188 | MAE=322571565.3250 | MAPE=63.2153
+2026-05-07 12:22:06,271 | INFO     | src.model_selector | [Selector] Utah — Best model: LSTM (RMSE=35647223.9907)
+2026-05-07 12:22:06,272 | INFO     | src.model_selector | [Selector] Utah — All model metrics:
+2026-05-07 12:22:06,272 | INFO     | src.model_selector |   LSTM       | RMSE=35647223.9907 | MAE=32522308.4419 | MAPE=71.6587
+2026-05-07 12:22:06,272 | INFO     | src.model_selector |   XGBoost    | RMSE=36339598.2213 | MAE=27070905.5823 | MAPE=77.9146
+2026-05-07 12:22:06,272 | INFO     | src.model_selector | [Selector] Vermont — Best model: LSTM (RMSE=7814599.4708)
+2026-05-07 12:22:06,272 | INFO     | src.model_selector | [Selector] Vermont — All model metrics:
+2026-05-07 12:22:06,272 | INFO     | src.model_selector |   LSTM       | RMSE=7814599.4708 | MAE=7074017.8826 | MAPE=72.8355
+2026-05-07 12:22:06,272 | INFO     | src.model_selector |   XGBoost    | RMSE=7836889.8115 | MAE=5386141.2783 | MAPE=85.3128
+2026-05-07 12:22:06,272 | INFO     | src.model_selector | [Selector] Virginia — Best model: XGBoost (RMSE=125141756.4608)
+2026-05-07 12:22:06,272 | INFO     | src.model_selector | [Selector] Virginia — All model metrics:
+2026-05-07 12:22:06,272 | INFO     | src.model_selector |   XGBoost    | RMSE=125141756.4608 | MAE=92954280.2781 | MAPE=67.7472
+2026-05-07 12:22:06,273 | INFO     | src.model_selector |   LSTM       | RMSE=128601364.9627 | MAE=122525875.3853 | MAPE=66.0398
+2026-05-07 12:22:06,273 | INFO     | src.model_selector | [Selector] Washington — Best model: LSTM (RMSE=81717966.2525)
+2026-05-07 12:22:06,273 | INFO     | src.model_selector | [Selector] Washington — All model metrics:
+2026-05-07 12:22:06,274 | INFO     | src.model_selector |   LSTM       | RMSE=81717966.2525 | MAE=74937750.2607 | MAPE=71.6663
+2026-05-07 12:22:06,274 | INFO     | src.model_selector |   XGBoost    | RMSE=90466988.5566 | MAE=68068842.8094 | MAPE=68.5899
+2026-05-07 12:22:06,274 | INFO     | src.model_selector | [Selector] West Virginia — Best model: LSTM (RMSE=32193402.9966)
+2026-05-07 12:22:06,275 | INFO     | src.model_selector | [Selector] West Virginia — All model metrics:
+2026-05-07 12:22:06,275 | INFO     | src.model_selector |   LSTM       | RMSE=32193402.9966 | MAE=29208353.3998 | MAPE=72.5319
+2026-05-07 12:22:06,275 | INFO     | src.model_selector |   XGBoost    | RMSE=32847496.8312 | MAE=24940599.5687 | MAPE=77.2292
+2026-05-07 12:22:06,275 | INFO     | src.model_selector | [Selector] Wisconsin — Best model: LSTM (RMSE=69348584.0722)
+2026-05-07 12:22:06,275 | INFO     | src.model_selector | [Selector] Wisconsin — All model metrics:
+2026-05-07 12:22:06,276 | INFO     | src.model_selector |   LSTM       | RMSE=69348584.0722 | MAE=66637669.8874 | MAPE=64.9337
+2026-05-07 12:22:06,276 | INFO     | src.model_selector |   XGBoost    | RMSE=83143695.4524 | MAE=60940957.7896 | MAPE=65.7205
+2026-05-07 12:22:06,276 | INFO     | src.model_selector | [Selector] Wyoming — Best model: LSTM (RMSE=9192732.7872)
+2026-05-07 12:22:06,276 | INFO     | src.model_selector | [Selector] Wyoming — All model metrics:
+2026-05-07 12:22:06,276 | INFO     | src.model_selector |   LSTM       | RMSE=9192732.7872 | MAE=8491305.1147 | MAPE=70.6773
+2026-05-07 12:22:06,276 | INFO     | src.model_selector |   XGBoost    | RMSE=9683377.3454 | MAE=6181046.9732 | MAPE=94.6422
+2026-05-07 12:22:06,281 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Alabama.json
+2026-05-07 12:22:06,283 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Arizona.json
+2026-05-07 12:22:06,291 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Arkansas.json
+2026-05-07 12:22:06,295 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\California.json
+2026-05-07 12:22:06,300 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Colorado.json
+2026-05-07 12:22:06,303 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Connecticut.json
+2026-05-07 12:22:06,310 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Florida.json
+2026-05-07 12:22:06,314 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Georgia.json
+2026-05-07 12:22:06,317 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Illinois.json
+2026-05-07 12:22:06,321 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Indiana.json
+2026-05-07 12:22:06,325 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Iowa.json
+2026-05-07 12:22:06,328 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Kansas.json
+2026-05-07 12:22:06,335 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Kentucky.json
+2026-05-07 12:22:06,342 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Louisiana.json
+2026-05-07 12:22:06,347 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Maine.json
+2026-05-07 12:22:06,353 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Maryland.json
+2026-05-07 12:22:06,359 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Massachusetts.json
+2026-05-07 12:22:06,363 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Michigan.json
+2026-05-07 12:22:06,367 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Minnesota.json
+2026-05-07 12:22:06,369 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Mississippi.json
+2026-05-07 12:22:06,373 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Missouri.json
+2026-05-07 12:22:06,377 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Nebraska.json
+2026-05-07 12:22:06,380 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Nevada.json
+2026-05-07 12:22:06,384 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\New Hampshire.json
+2026-05-07 12:22:06,388 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\New Mexico.json
+2026-05-07 12:22:06,390 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\New York.json
+2026-05-07 12:22:06,393 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\North Carolina.json
+2026-05-07 12:22:06,395 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Ohio.json
+2026-05-07 12:22:06,399 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Oklahoma.json
+2026-05-07 12:22:06,402 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Oregon.json
+2026-05-07 12:22:06,406 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Pennsylvania.json
+2026-05-07 12:22:06,409 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Rhode Island.json
+2026-05-07 12:22:06,411 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\South Carolina.json
+2026-05-07 12:22:06,414 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\South Dakota.json
+2026-05-07 12:22:06,416 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Tennessee.json
+2026-05-07 12:22:06,420 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Texas.json
+2026-05-07 12:22:06,423 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Utah.json
+2026-05-07 12:22:06,425 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Vermont.json
+2026-05-07 12:22:06,428 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Virginia.json
+2026-05-07 12:22:06,429 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Washington.json
+2026-05-07 12:22:06,434 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\West Virginia.json
+2026-05-07 12:22:06,437 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Wisconsin.json
+2026-05-07 12:22:06,439 | INFO     | train_all |   Forecast saved: C:\forecasting_system\artifacts\forecasts\Wyoming.json
+2026-05-07 12:22:06,451 | INFO     | train_all |   Consolidated results saved: C:\forecasting_system\artifacts\results\evaluation_results.json
+2026-05-07 12:22:06,451 | INFO     | train_all | ======================================================================
+2026-05-07 12:22:06,452 | INFO     | train_all |   Pipeline complete in 1180.5s
+2026-05-07 12:22:06,452 | INFO     | train_all | ======================================================================

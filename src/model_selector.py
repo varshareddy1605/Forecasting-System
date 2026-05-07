@@ -15,19 +15,7 @@ logger = logging.getLogger(__name__)
 
 def select_best_model(model_results: List[Dict], state: str) -> Dict:
     """
-    Given a list of model result dicts (each containing 'model_name' and 'metrics'),
-    return the result dict for the model with the lowest RMSE.
-
-    Parameters
-    ----------
-    model_results : list of dicts
-        Each dict must have keys: model_name, metrics (with 'rmse'), forecast.
-    state : str
-        State name for logging.
-
-    Returns
-    -------
-    dict — the winning model's full result dict, with 'state' added.
+    Selects and returns the model with the lowest RMSE.
     """
     valid = [r for r in model_results if r.get("metrics", {}).get("rmse") is not None]
 
@@ -42,7 +30,6 @@ def select_best_model(model_results: List[Dict], state: str) -> Dict:
         f"(RMSE={best['metrics']['rmse']:.4f})"
     )
 
-    # Log comparison table
     logger.info(f"[Selector] {state} — All model metrics:")
     for r in sorted(valid, key=lambda x: x["metrics"]["rmse"]):
         logger.info(
@@ -67,15 +54,7 @@ def select_best_models_all_states(
     all_state_results: Dict[str, List[Dict]]
 ) -> Dict[str, Dict]:
     """
-    Run select_best_model for every state.
-
-    Parameters
-    ----------
-    all_state_results : dict[state -> list of model result dicts]
-
-    Returns
-    -------
-    dict[state -> best result dict]
+    Runs model selection for all states and returns a mapped dictionary.
     """
     final = {}
     for state, model_results in all_state_results.items():

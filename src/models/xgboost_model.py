@@ -101,7 +101,7 @@ def train_xgboost(
 
     logger.info(f"[XGBoost] Training for state: {state}")
 
-    # Combine train + val for model fitting
+    # Combine history for fitting
     fit_df = pd.concat([train_df, val_df])
     X_fit = fit_df[FEATURE_COLS]
     y_fit = fit_df["Total"]
@@ -122,7 +122,7 @@ def train_xgboost(
         verbose=False,
     )
 
-    # ── Evaluate on test using walk-forward ─────────────────────────────────
+    # Walk-forward evaluation
     history = fit_df["Total"].copy()
     test_preds = []
 
@@ -142,8 +142,7 @@ def train_xgboost(
     metrics = {"rmse": round(rmse, 4), "mae": round(mae, 4), "mape": round(mape, 4)}
     logger.info(f"[XGBoost] {state} metrics: {metrics}")
 
-    # ── 8-week walk-forward forecast ─────────────────────────────────────────
-    # Refit on all data
+    # Walk-forward 8-week forecast
     all_df = pd.concat([fit_df, test_df])
     X_all  = all_df[FEATURE_COLS]
     y_all  = all_df["Total"]
@@ -160,7 +159,6 @@ def train_xgboost(
         history = pd.concat([history, pd.Series([pred], index=[fd])])
         forecast.append({"date": fd.strftime("%Y-%m-%d"), "sales": round(pred, 2)})
 
-    # ── Save model ───────────────────────────────────────────────────────────
     model_path = artifacts_dir / f"{state}_xgboost.pkl"
     with open(model_path, "wb") as f:
         pickle.dump(model, f)

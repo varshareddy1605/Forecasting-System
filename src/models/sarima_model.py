@@ -53,6 +53,8 @@ def train_sarima(
         approximation=True,
         error_action="ignore",
         suppress_warnings=True,
+        start_p=1, start_q=1,
+        start_P=1, start_Q=1,
         max_p=1, max_q=1,
         max_P=1, max_Q=1,
         max_d=1, max_D=1,
